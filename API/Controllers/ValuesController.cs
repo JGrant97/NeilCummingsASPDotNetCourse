@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DatingApp.API.Controllers
 {
@@ -14,6 +12,7 @@ namespace DatingApp.API.Controllers
     public class ValuesController : ControllerBase
     {
         private readonly DataContext _context;
+
         public ValuesController(DataContext context)
         {
             _context = context;
@@ -29,7 +28,7 @@ namespace DatingApp.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task <ActionResult<Value>> Get(int id)
+        public async Task<ActionResult<Value>> Get(int id)
         {
             var value = await _context.values.FindAsync(id);
             return Ok(value);

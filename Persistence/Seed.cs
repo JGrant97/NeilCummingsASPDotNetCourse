@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Persistence
 {
@@ -107,7 +106,7 @@ namespace Persistence
                 };
 
                 context.Activities.AddRange(activities);
-                context.SaveChanges(); 
+                context.SaveChanges();
             }
         }
     }
